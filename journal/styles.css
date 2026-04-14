@@ -61,25 +61,32 @@ footer p {
 body {
     max-width: 1200px;
     min-width: 900px;
-    margin: auto;
+    margin: 0 auto;
 
     display: flex;
     flex-direction: column;
+
+    box-sizing: border-box;
 }
 
 main {
     width: 100%;
-    flex: 1; 
-
     display: flex;
+    flex-direction: column;
 }
 
 #home {
     background-color: #FFFFFF;
-    flex: 1;
 }
 
 #sections {
+    position: fixed;
+    height: 100vh;
+    right: 0;
+    right: max(calc((100vw - 1200px) / 2 - 7px));
+    top: 0;
+    z-index: 3;
+
     display: flex;
 }
 
@@ -101,12 +108,7 @@ main {
     gap: 8px;
 }
 
-#home {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 40px;
-}
+
 
 /* PANELS */
 #research {
@@ -167,7 +169,7 @@ main {
 }
 
 .columnname:hover + .content, .content:hover {
-    width: 400px;
+    width: 300px;
 }
 
 /* BLUR WHEN NOT SELECTED */
@@ -176,7 +178,14 @@ main:has(.panel:hover) #home {
     filter: blur(.25px);
 }
 
-#home {
+main:has(.panel:hover) .post {
+    opacity: 0.3;
+    filter: blur(.25px);
+}
+
+
+
+#home, .post {
     transition: 0.25s ease-out;
 }
 
@@ -247,3 +256,100 @@ main:has(.panel:hover) #home {
 }
 
 
+
+
+#tag0 {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    left: max(40px, calc((100vw - 1200px) / 2 + 40px));
+    z-index: 5;
+
+
+    font-family: 'DM Sans';
+    letter-spacing: 0.05em;
+    font-size: 14px;
+}
+
+#home {
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+}
+
+/* POSTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT */
+
+
+.post .title p {
+    font-family: 'DM Serif Display';
+    font-size: 32px;
+    color: #373737;
+
+    margin: 0;
+}
+
+.post .title .articlecaption {
+    font-family: 'DM Sans';
+    font-size: 14px;
+
+    margin: 0;
+}
+
+.post .title .articlecaption a {
+    text-decoration: none;
+    color: #a5a5a5;
+    transition: 0.25s ease-in-out;
+
+    margin: 0;
+}
+
+.post .title .articlecaption a:hover {
+    color: #373737
+}
+
+.post .postcontent p {
+    font-family: 'DM Sans';
+    font-size: 16px;
+    max-width: 48ch;
+    line-height: 1.35em;
+
+    hyphens: none;
+
+    color: #373737;
+
+    margin: 0;
+}
+
+/* LAYOUT */
+.post .postcontent {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+.post .title {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.post {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+    gap: 32px;
+
+    padding: 48px;
+}
+
+.post .postcontent a {
+    color: #6D9BFF;
+}
