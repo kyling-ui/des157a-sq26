@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+
+    <style>
+
+        #title p, #title h1, #gameInfo p {
+            margin: 0;
+        }
+
+        #title {
+            font-family: Helvetica;
+
+            position: fixed;
+            top: 24px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+
+        }
+
+        #roundNumber {
+            margin: 0;
+        }
+
+        #gameUpdates {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+
+            font-size: 14px;
+        }
+
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #gameInfo {
+            font-family: Helvetica;
+
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        #selected {
+            display: flex;
+            gap: 24px;
+
+            font-size: 14px;
+        }
+
+        #gameMessage {
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+
+
+     <script>
+
+        // This script plays a rock, paper, scissors game that keeps track of player (user) and computer wins. Below are function explanations:
+
+        // 1. computerInput() : generates a random number through Math.number which is rounded up. The rounded value is then used in the array to select between rock, paper, or scissors. Whichever is selected is returned as a string.
+
+        // 2. playerInput() : player is prompted to choose between rock, paper, and scissors. This function verifies that the player has typed / inputted one of the three choices. If not, the player is alerted with 'wrong input' and is prompted again. Whatever the player has chosen is returned as a string.
+
+        // 3. winOrLose() : takes both the computerInput and playerInput and determines who is the winner using selective statements. The result is returned as a string between: 'won', 'drawed', or 'lost'.
+
+        // 4. updateNum() : keeps track of the number of rounds, the player's win streak, player's wins, and computer's wins. Based on the returned value of winOrLose(), the numbers are updated. 
+
+        // 5. game() : runs all the functions and also displays whether or not the player has won, drawed, or lost based on returned values .
+
+
+        var choices = ['rock', 'paper', 'scissors'];
+
+        var roundNum = 0;
+        var streakNum = 0;
+        var playerWinNum = 0;
+        var computerWinNum = 0;
+
+        function computerInput() {
+            var randomValue = Math.random() * 2;
+            var roundedValue = Math.round(randomValue)
+
+            var computerChoice = choices[roundedValue];
+
+            document.querySelector('#computerPicked').innerHTML = `Computer Picked: ${computerChoice}`;
+
+            return computerChoice;
+        }
+
+        function playerInput() {
+            
+            var userInput = prompt(`Rock, paper, or scissors?`).toLowerCase();
+
+            if (userInput == `rock` || userInput ==  `scissors` || userInput == `paper`) {
+                document.querySelector('#playerPicked').innerHTML = `You Picked: ${userInput}`;
+                return userInput;
+                
+            }
+
+            else {
+                alert(`Invalid input! Try again!`)
+                return playerInput();   
+            }
+
+        }
+
+        function winOrLose(playerChoice, computerChoice) {
+            
+            var gameDecision = ``;
+
+            if (playerChoice == `rock`) {
+                if (computerChoice == `rock`) {
+                    gameDecision = `drawed`;
+                }
+
+                else if (computerChoice == `paper`) {
+                    gameDecision = `lost`;
+                }
+
+                else if (computerChoice == `scissors`) {
+                    gameDecision = `won`;
+                }
+
+                else {}
+            }
+
+            else if (playerChoice == `paper`) {
+                if (computerChoice == `rock`) {
+                    gameDecision = `won`;
+                }
+
+                else if (computerChoice == `paper`) {
+                    gameDecision = `drawed`;
+                }
+
+                else if (computerChoice == `scissors`) {
+                    gameDecision = `lost`;
+                }
+
+                else {}
+            }
+
+            else if (playerChoice == `scissors`) {
+                if (computerChoice == `rock`) {
+                    gameDecision = `lost`;
+                }
+
+                else if (computerChoice == `paper`) {
+                    gameDecision = `won`;
+                }
+
+                else if (computerChoice == `scissors`) {
+                    gameDecision = `drawed`;
+                }
+
+                else {}
+            }
+
+            else{}
+
+            return gameDecision
+        }
+
+        function updateNum(gameResult) {
+            
+            roundNum++;
+
+            if (gameResult == 'won') {
+                streakNum++;
+                playerWinNum++;
+
+                document.querySelector('#gameMessage').style.color = `green`
+            }
+
+            else if (gameResult == 'lost') {
+                streakNum = 0;
+                computerWinNum++;
+
+                 document.querySelector('#gameMessage').style.color = `red`
+            }
+
+            else {
+                streakNum = 0;
+                document.querySelector('#gameMessage').style.color = `black`
+            }
+
+            document.querySelector('#roundNumber').innerHTML = `Round: ${roundNum}`;
+            document.querySelector('#playerStreak').innerHTML = `Your Win Streak: ${streakNum}`;
+            document.querySelector('#playerWins').innerHTML = `Your Wins: ${playerWinNum}`;
+            document.querySelector('#computerWins').innerHTML = `Computer Wins: ${computerWinNum}`;
+        }
+
+        function game() {
+
+            var gameResult = winOrLose(playerInput(), computerInput())
+
+            updateNum(gameResult);
+
+            document.querySelector('#gameMessage').innerHTML = `You ${gameResult}!`;
+
+            // return gameResult; 
+        }    
+
+    </script>
+
+
+        <div id="title">
+            <h1 id="roundNumber">Round: </h1>
+
+            <div id="gameUpdates">
+                <p id="playerStreak">Your Win Streak: </p>
+                <p id="playerWins">Your Wins: </p>
+                <p id="computerWins">Computer Wins: </p>
+            </div>
+        </div>
+        
+        
+
+        <div id="gameInfo">
+            <p id="gameMessage">Play your first round!</p>
+            <button onclick="game()">Play!</button>
+
+            <div id="selected">
+                <p id="computerPicked">Computer Picked: </p>
+                <p id="playerPicked">You Picked: </p>
+            </div>
+        </div>
+
+
+
+
+       
+</body>
+</html>
