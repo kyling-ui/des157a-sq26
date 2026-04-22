@@ -216,7 +216,8 @@
             document.querySelector('#gameMessage').innerHTML = `You ${gameResult}!`;
 
             // return gameResult; 
-        }    
+        }
+        
 
     </script>
 
@@ -235,13 +236,18 @@
 
         <div id="gameInfo">
             <p id="gameMessage">Play your first round!</p>
-            <button onclick="game()">Play!</button>
+            <button>Play!</button>
 
             <div id="selected">
                 <p id="computerPicked">Computer Picked: </p>
                 <p id="playerPicked">You Picked: </p>
             </div>
         </div>
+
+        <script>
+            var playButton = document.querySelector(`button`);
+            playButton.addEventListener('click', game)
+        </script>
 
 
 
