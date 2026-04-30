@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madlibs V1</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"> 
+
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap" rel="stylesheet">
+
+
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main>
+    <!-- Should just be a page with the start mission button -->
+    <div id="container">
+        <div id="section1">
+
+            <button id="startButton">Start Mission</button>
+
+        </div>
+
+
+        <!-- Should be the section with the form three times -->
+        <div id="section2">
+            <div id="formAll">
+                <div id="formHeader">
+                    <h1>TASK: FILL IN THE BLANKS</h1>
+
+                    <div id="progressBar">
+                        <div class="progressCircle" id="circle1"></div>
+                        <div class="progressLine" id="line1"></div>
+                        <div class="progressCircle" id="circle2"></div>
+                        <div class="progressLine" id="line2"></div>
+                        <div class="progressCircle" id="circle3"></div>
+                    </div>
+                </div>
+
+                <div id="formBody">
+                    <div id="container2" class="formDown">
+                        <form id="form1">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                
+                            <label for="noun1">Noun</label>
+                            <input type="text" id="noun1" name="noun1" required>
+
+                            <label for="adjective1">Adjective</label>
+                            <input type="text" id="adjective1" name="adjective1" required>
+
+                            <label for="noun2">Noun</label>
+                            <input type="text" id="noun2" name="noun2" required>
+
+                            <label for="verb1">Verb + "ing"</label>
+                            <input type="text" id="verb1" name="verb1" required>
+                        </form>
+
+                        <form id="form2" class="hidden">
+                            <label for="animal1">Animal</label>
+                            <input type="text" id="animal1" name="animal1" required>
+
+                            <label for="verb2">Verb</label>
+                            <input type="text" id="verb2" name="verb2" required>
+
+                            <label for="adjective2">Adjective</label>
+                            <input type="text" id="adjective2" name="adjective2" required>
+
+                            <label for="noun3">Noun</label>
+                            <input type="text" id="noun3" name="noun3" required>
+
+                            <label for="noun4">Noun</label>
+                            <input type="text" id="noun4" name="noun4" required>
+
+                        </form> 
+
+                        <form id="form3" class="hidden">
+                            <label for="adjective3">Adjective</label>
+                            <input type="text" id="adjective3" name="adjective3" required>
+
+                            <label for="adjective4">Adjective</label>
+                            <input type="text" id="adjective4" name="adjective4" required>
+
+                            <!-- <label for="adjective5">Adjective</label>
+                            <input type="text" id="adjective5" name="adjective5" required> -->
+
+                            <label for="verb3">Verb in Past Tense</label>
+                            <input type="text" id="verb3" name="verb3" required>
+                            
+                        </form>
+                    </div>
+                </div>
+
+                <div id="formFooter">
+
+                    <button id="formBackButton">Back</button>
+
+                    <button id="formNextButton">Next Day</button>
+
+                    <input id="submitButton" value="Submit" type="submit" class="hidden">
+
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Should the madlibs display page -->
+        <div id="section3" class="hidden">
+
+            <div id="madLibsAll">
+
+                <div id="madLibsHeader">
+                    <div id="missionHeader">
+                        <p>MISSION LOG | STARDATE: 04.14.2620</p>
+                        <hr>
+                    </div>
+                    
+                </div>
+
+                <div id="madLibsBody">
+                    <div id="madLibsContainer">
+                        <div id="madLibsContainer2">
+                            <p class="transmission">TRANSMISSION FROM COMMANDER <a id="name1" class="userWord"></a> ABOARD U.S.S JAVASTAR</p>
+
+                            <div id="dialogueContainer">
+                                <p>DAY 9: Communication with USS HyperText has been lost. HyperText Mission Control stopped responding a few days after landing on Plant <a class="userNoun1 userWord"></a>. Their last message were the words “<a id="userAdj1" class="userWord"></a> <a id="userNoun2" class="userWord"></a>” repeated 40 times.</p>
+
+                                <p>DAY 14: Rations are steady, crew morale is strong. Everything is going as planned. However, something seems off. Sergeant Mead has also started <a class="userVerb1 userWord"></a> in the middle of the night. No one has told him yet.</p>
+
+                                <p>DAY 22: Something is very wrong. We are not alone on the ship. <a id="userAnimal1" class="userWord"></a> marks and feces have been found in the hallways. They spell “<a id="userVerb2" class="userWord"></a>”. Sergeant Mead won’t stop laughing. We don’t know what it means.</p>
+
+                                <p>DAY 24: Sergeant Mead is still <a class="userVerb1 userWord"></a> every night. More marks have been reported.</p>
+
+                                <p>DAY 25: The <a id="userAdj2" class="userWord"></a> smell is getting stronger. Whatever it wants, it has to do with the <a id="userNoun3" class="userWord"></a>. We should never have taken the <a id="userNoun4" class="userWord"></a> from Planet <a class="userNoun1 userWord">NOUN</a></p>
+
+                                <p>DAY 27: It came at us. It was <a id="userAdj3" class="userWord"></a> and <a id="userAdj4" class="userWord"></a>. Then it <a id="userVerb3" class="userWord"></a> and took Sergeant Mead.</p>
+
+                                <p>DAY 28: We are locking the doors. We are not opening them until ___ - -- _</p>
+                            </div>
+
+                            <p class="transmission">TRANSMISSION ENDS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="madLibsFooter">
+                    <button id="startAgain">Start Over</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </main>
+
+
+
+</body>
+</html>
+
+
