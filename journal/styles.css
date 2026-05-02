@@ -328,6 +328,8 @@ main:has(.panel:hover) .post {
     display: flex;
     flex-direction: column;
 
+    width: fit-content;
+
     gap: 24px;
 }
 
@@ -341,6 +343,7 @@ main:has(.panel:hover) .post {
 }
 
 .post {
+    width: fit-content;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -348,9 +351,20 @@ main:has(.panel:hover) .post {
     gap: 32px;
 
     padding: 48px;
+
+    padding-top: 18px;
 }
 
 .post .postcontent a {
     color: #6D9BFF;
 }
 
+hr {
+    background-color: #a5a5a5;
+    border: none;
+    width: 100%;
+    height: 0.5px;
+
+    margin: 0;
+    margin-top: 12px;
+}
