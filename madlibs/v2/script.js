@@ -41,6 +41,37 @@
 
 
 
+    function checkInputFields(formId) {
+        const textFields = document.querySelectorAll(`#${formId} input[type='text']`); 
+        for (let i=0; i<textFields.length; i++) {
+            if (textFields[i].value == '') {
+                textFields[i].style.borderColor = 'rgb(255, 62, 62)'
+                textFields[i].placeholder = 'Missing'
+            } else {
+                textFields[i].style.borderColor = `#494746`;
+            }
+        }
+    }
+
+    const allInputFields = document.querySelectorAll(`input[type='text']`);
+
+    function fixFields() {
+        for (let i=0; i<allInputFields.length; i++) {
+            if(allInputFields[i].value !== '') {
+                allInputFields[i].style.borderColor = `#494746`;
+            }
+        }
+    }
+
+    function resetFields() {
+        for (let i=0; i<allInputFields.length; i++) {
+            allInputFields[i].placeholder = '';
+        }
+    }
+
+    for (let i = 0; i<allInputFields.length; i++) {
+        allInputFields[i].addEventListener(`input`, fixFields);
+    }
 
   
     nextButton.addEventListener(`click`, function(event) {
@@ -63,8 +94,12 @@
 
                 document.querySelector(`#circle2`).style.backgroundColor = `#FF7733`
                 document.querySelector(`#line1`).style.backgroundColor = `#FF7733`
-            } else { }
+            } else { 
+                checkInputFields(`form1`);
+            }
             // ADD ALERT
+
+
             
 
         } else if (classCheck == `formDown1`) {
@@ -87,7 +122,9 @@
                 nextButton.classList.add(`hidden`);
                 submitButton.classList.remove(`hidden`);
                 
-            } else {}
+            } else {
+                checkInputFields(`form2`);
+            }
             
         
         // } else if (classCheck == `formDown2`) {
@@ -150,7 +187,9 @@
             let container = document.querySelector(`#container`);
             container.style.transform = `translateX(-2400px)`;
 
-        } else {}
+        } else {
+            checkInputFields(`form3`)
+        }
 
 
         
@@ -158,6 +197,8 @@
 
 
     // SECTION 3 -> 1
+    const pause = document.querySelector(`#pause`);
+
     const startAgain = document.querySelector(`#startAgain`);
     startAgain.addEventListener(`click`, function(){
         let container = document.querySelector(`#container`);
@@ -195,6 +236,21 @@
         document.querySelector(`#section3`).classList.add(`hidden`)
         document.querySelector(`#form2`).classList.add(`hidden`)
         document.querySelector(`#form3`).classList.add(`hidden`)
+
+        resetFields();
+        pause.innerHTML = 'Pause Scroll';
+
+    })
+
+    pause.addEventListener(`click`, function(){
+        if (pause.innerHTML == `Pause Scroll`) {
+            madLibsContainer2.classList.add(`pauseScroll`);
+            pause.innerHTML = 'Unpause';
+        } else if (pause.innerHTML == 'Unpause') {
+            madLibsContainer2.classList.remove(`pauseScroll`);
+            pause.innerHTML = 'Pause Scroll'
+        }
+        
         
     })
 })();
