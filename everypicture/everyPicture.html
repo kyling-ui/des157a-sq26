@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Every Picture: Kyle Ling</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <link href="styles.css" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main>
+
+            <!-- each should take 1 flex -->
+            <div id="left">
+
+                <!-- picture -->
+                <div id="viewingContainer">
+                    <div id="photoContainer">
+                        <img src="images/photo1.jpeg" alt="photo1">
+
+                        <div id="lockedFrame">
+                            <img src="images/photo2.jpeg" alt="photo2">
+                            <div id="lockedOverlay">
+                                <svg id="lockIcon" width="32px" height="36px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288" stroke="#C5BEC2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p>Locked</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+
+            <!-- each should take 1 flex -->
+            <div id="right">
+
+                <!-- text that goes with each picture *should change* -->
+                <div id="storyText">
+                    <p>Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Praesent egestas neque eu enim. Fusce fermentum odio nec arcu. Nulla facilisi. Mauris sollicitudin fermentum libero.</p>
+                </div>
+
+                <!-- percentage of brightness filter -->
+                <div id="brightness">
+                    <p id="brightnessLabel">Brightness: 100%</p>
+                    <div id="brightnessIndicator">
+                        <div id="brightnessFill"></div>
+                    </div>
+                    <p id="brightnessHint">Within range to unlock</p>
+                </div>
+            </div>
+
+
+        <!-- beginning instructions -->
+        <div id="allInstructions">
+            <div class="instructions visible" id="instruction1">
+                <p>Read to learn about the story behind the photo</p>
+                <svg class="nextIcon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg> 
+            </div>
+
+            <div class="instructions exiting" id="instruction2">
+                <p>Hover over the picture and drag to explore</p>
+                <svg class="nextIcon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg> 
+            </div>
+
+            <div class="instructions exiting" id="instruction3">
+                <p>Control the picture's brightness by scrolling up or down</p>
+                <svg class="nextIcon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg> 
+            </div>
+
+            <div class="instructions exiting" id="instruction4">
+                <p>Unlock the next picture with the correct brightness</p>
+                <svg class="nextIcon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg> 
+            </div>
+        </div>
+
+    </main>
+    
+</body>
+
+</html>
