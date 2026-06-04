@@ -1,0 +1,606 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    background-color: #FCFCFA;
+    height: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+}
+
+.container {
+    background-color: #FCFCFA;
+    min-height: 100%;
+    height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+h4, h5 {
+    font-family: 'Roboto Mono';
+    font-size: 16px;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+
+    margin: 0;
+}
+
+.yellowText {
+    color: #FFA32B;
+}
+
+.purpleText {
+    color: #B057FF;
+}
+
+.winsCount p {
+    font-family: 'Roboto Mono';
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+
+    margin: 0;
+}
+
+#winCount1, #winCount2 {
+    font-size: 32px;
+
+    margin: 0;
+}
+
+.winText {
+    font-size: 12px;
+
+    margin: 0;
+}
+
+
+.regButton {
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Inter';
+
+    display: inline-flex;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    background-color: #FCFCFA;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.48s ease-out;
+}
+
+/* fix */
+.regButton:active {
+    transform: scale(0.94);
+
+    border: none;
+    border-radius: 6.4px;
+    /* background: #A6A6A6; */
+
+    /* color: #FCFCFA; */
+}
+
+/* LAY OUT */
+#diceRolled {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+
+    gap: 12px;
+} 
+/* need to add animation */
+
+.setOfButtons {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+
+    gap: 12px;
+    justify-content: space-between;
+}
+
+#head2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+
+    gap: 16px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.winsCount {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.playerWins {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+
+    gap: 12px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#gameSettings {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+
+    gap: 12px;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+#head1 {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 20px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    width: 100%;
+    height: fit-content;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 32px;
+}
+
+/* body */
+.operator {
+    font-family: 'Inter';
+    font-size: 16px;
+
+    margin: 0;
+}
+
+.row {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+
+    align-items: center;
+
+    gap: 32px;
+    margin: 0;
+}
+
+.bothRows {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+
+    gap: 16px;
+}
+
+.rowsAndLock {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+
+    gap: 20px;
+    align-items: center;
+}
+
+.bodyContainer {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+
+    gap: 32px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#leftSide, #rightSide {
+    flex: 1;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+#middleSide p {
+    font-family: 'Roboto Mono';
+    font-size: 32px;
+    color: #FFA32B;
+    text-transform: uppercase;
+
+    margin: 0;
+}
+
+#middleSide {
+    width: fit-content;
+    height: fit-content;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+
+
+/* ANIMATION */
+/* LOAD UP */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeUp 1.2s ease-out forwards;
+}
+
+/* ROLLIN */
+@keyframes rollDieIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    } to  {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ROL DIE OUT */
+@keyframes rollDieOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    } to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.dieIn {
+    animation: rollDieIn 0.44s ease-out forwards;
+}
+
+.dieOut {
+    animation: rollDieOut 0.44s ease-in forwards;
+}
+
+/* OVERLAY ANIMATION */
+
+/* DROPDOWN FOR OPERATORS */
+.operatorSelect, .operatorSelect2 {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+    transition: transform 0.4s ease-out;
+}
+
+.operatorSelect {
+    background-color: #FFA32B;
+}
+
+.operatorSelect2 {
+    background-color: #B057FF;
+}
+
+.operatorSelect .whiteText, .operatorSelect2 .whiteText {
+    color: #FCFCFA;
+    margin: 0;
+    font-size: 12px;
+    font-family: 'Roboto Mono';
+}
+
+.overlayBtn, .overlayBtn2 {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+    display: flex;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #FCFCFA;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    margin: 0;
+
+    box-shadow: 0px 2px 6px rgba(38, 37, 50, 0.16);
+
+    transition: transform 0.6s ease-out;
+}
+
+.overlayBtn:hover, .overlayBtn2:hover {
+    transform: scale(1.12);
+}
+
+.operatorSelect:hover, .operatorSelect2:hover {
+    transform: scale(1.12);
+}
+
+.overlayBtn {
+    background-color: #FFA32B;
+}
+
+.overlayBtn2 {
+    background-color: #B057FF;
+}
+
+.overlayBtn .whiteText2, .overlayBtn2 .whiteText2 {
+    color: #FCFCFA;
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Roboto Mono';
+
+    cursor: pointer;
+
+    margin: 0;
+}
+
+.overlayOptions, .overlayOptions2 {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    overflow: visible;
+
+    margin: 0;
+}
+
+#operatorOverlay1, #operatorOverlay2 {
+    width: fit-content;
+    height: fit-content;
+
+    z-index: 10;
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+}
+
+.overlayHide {
+    display: none;
+}
+
+
+/* player buttons */
+.playerButtons {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 16px;
+}
+
+#lockIn1, #lockIn2 {
+    color: #FCFCFA;
+    
+    border: none;
+
+    box-shadow: 0px 2px 6px rgba(38, 37, 50, 0.16);
+}
+
+#lockIn1 {
+    background-color: #FFA32B;
+}
+
+#lockIn2 {
+    background-color: #B057FF;
+}
+
+#clear1, #clear2 {
+    background-color: #c0c0c0;
+    color: white;
+    border: none;
+
+    box-shadow: 0px 2px 6px rgba(38, 37, 50, 0.16);
+
+}
+
+#rollBtn {
+    background-color: #7a7a7a;
+    color: #FCFCFA;
+    border: none;
+
+    box-shadow: 0px 2px 6px rgba(38, 37, 50, 0.16);
+
+    transition: all 0.6s ease-in;
+    transition: background-color 0s;
+    
+}
+
+#smallerBtn, #biggerBtn {
+    border: none;
+    box-shadow: 0px 2px 6px rgba(38, 37, 50, 0.16);
+    font-size: 14px;
+
+    margin: 0;
+}
+
+.settingInactive{
+    background-color: #e4e4e4;
+    color: #a4a4a4;
+    opacity: 0.5;
+}
+
+.settingActive {
+    background-color: #ffffff;
+    opacity: 1;
+    color: #2e2e2e;
+    font-size: 14px;
+    border: none;
+}
+
+#smallerBtn.settingInactive:hover, #biggerBtn.settingInactive:hover {
+    opacity: 0.85;
+}
+
+#middleSide {
+    opacity: 0;
+
+    transition: opacity 0.6s ease-out;
+}
+
+/* disabled lockin */
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#playAgainBtn {
+    box-shadow: 0px 2px 6px rgba(38, 37, 50, 0.16);
+}
+
+button {
+    cursor: pointer;
+}
+
+.locked {
+    transform: scale(0.86);
+    opacity: 0.8;
+}
+
+/* locking p2 out */
+#rightSide {
+    opacity: 0.5;
+    transition: opacity 0.4s ease-out;
+}
+
+.waitText {
+    font-family: 'Roboto Mono';
+    font-size: 11px;
+    color: #B057FF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+#p2Wait {
+    display: block;
+}
+
+#player2Header {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+
+    gap: 8px;
+}
+
+/* display score */
+.scoreText {
+    font-family: 'Roboto Mono';
+    font-size: 14px;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+/* sources */
+
+footer {
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer p {
+    font-family: 'Inter';
+    font-size: 14px;
+    color: #d4d4d4;
+}
+
+footer a {
+    text-decoration: none;
+    color: #d4d4d4;
+
+    transition: all 0.26s ease-out;
+}
+
+footer a:hover {
+    color: #717171;
+}
+
+.sources{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #2e2e2e;
+
+}
+
+.sources h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color:#2e2e2e
+}
+
+.sources .group1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: fit-content;
+    height: fit-content;
+
+}

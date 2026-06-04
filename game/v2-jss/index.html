@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    
+    <link href="styles.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class ='container'>
+    <header>
+
+        <div id="head1">
+            <div class="playerWins">
+                <h4 class="yellowText">Player 1</h4>
+
+                <div class="winsCount">
+                    <p id="winCount1">0</p>
+                    <p class="winText">Wins</p>
+                </div>
+            </div>
+
+            <div id="gameSettings">
+                <h4>Win By:</h4>
+
+                <div id="settingButtons" class="setOfButtons">
+                    <!-- <p class="regButton" id="smallerBtn">Smaller</p>
+                    <p class="regButton" id="biggerBtn">Bigger</p> -->
+                    <button class="regButton" id="smallerBtn">Smaller</button>
+                    <button class="regButton" id="biggerBtn">Bigger</button>
+                </div>
+            </div>
+
+            <div class="playerWins">
+                <h5 class="purpleText">Player 2</h5>
+
+                <div class="winsCount">
+                    <p id="winCount2">0</p>
+                    <p class="winText">Wins</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="head2">
+
+            <div id="diceRolled">
+                <div class="die1" id="dice1">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                        <g filter="url(#filter0_d_38_2)">
+                        <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="2" dy="1"/>
+                        <feGaussianBlur stdDeviation="1.5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="die1" id="dice2">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                        <g filter="url(#filter0_d_38_2)">
+                        <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="2" dy="1"/>
+                        <feGaussianBlur stdDeviation="1.5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="die1" id="dice3">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                        <g filter="url(#filter0_d_38_2)">
+                        <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="2" dy="1"/>
+                        <feGaussianBlur stdDeviation="1.5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="die1" id="dice4">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                        <g filter="url(#filter0_d_38_2)">
+                        <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="2" dy="1"/>
+                        <feGaussianBlur stdDeviation="1.5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="die1" id="dice5">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                        <g filter="url(#filter0_d_38_2)">
+                        <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="2" dy="1"/>
+                        <feGaussianBlur stdDeviation="1.5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="die1" id="dice6">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                        <g filter="url(#filter0_d_38_2)">
+                        <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="2" dy="1"/>
+                        <feGaussianBlur stdDeviation="1.5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <div id="gameButtons" class="setOfButtons">
+                <button class="regButton" id="rollBtn">Start Game!</button>
+                <button class="regButton" id="playAgainBtn" disabled>Play Again</button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <div id="leftSide" class="bodyContainer">
+            <h4 class="yellowText">Player 1</h4>
+
+            <div class="rowsAndLock">
+                <div class="bothRows">
+                <div class="row">
+                    <div class="die1" id="p1die1">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                            <g filter="url(#filter0_d_38_2)">
+                            <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                            </g>
+                            <defs>
+                            <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dx="2" dy="1"/>
+                            <feGaussianBlur stdDeviation="1.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                            </filter>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <div class="operatorSelect" id="p1Select1">
+                        <p class="whiteText">●</p>
+                    </div>
+ 
+                    <div class="die1" id="p1die2">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                            <g filter="url(#filter0_d_38_2)">
+                            <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                            </g>
+                            <defs>
+                            <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dx="2" dy="1"/>
+                            <feGaussianBlur stdDeviation="1.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                            </filter>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <div class="operatorSelect" id="p1Select2">
+                        <p class="whiteText">●</p>
+                    </div>
+
+                    <div class="die1" id="p1die3">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                            <g filter="url(#filter0_d_38_2)">
+                            <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                            </g>
+                            <defs>
+                            <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dx="2" dy="1"/>
+                            <feGaussianBlur stdDeviation="1.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                            </filter>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <div class="operatorSelect" id="p1Select3">
+                        <p class="whiteText">●</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="die1" id="p1die4">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                            <g filter="url(#filter0_d_38_2)">
+                            <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                            </g>
+                            <defs>
+                            <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dx="2" dy="1"/>
+                            <feGaussianBlur stdDeviation="1.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                            </filter>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <div class="operatorSelect" id="p1Select4">
+                        <p class="whiteText">●</p>
+                    </div>
+
+                    <div class="die1" id="p1die5">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                            <g filter="url(#filter0_d_38_2)">
+                            <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                            </g>
+                            <defs>
+                            <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dx="2" dy="1"/>
+                            <feGaussianBlur stdDeviation="1.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                            </filter>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <div class="operatorSelect" id="p1Select5">
+                        <p class="whiteText">●</p>
+                    </div>
+
+                    <div class="die1" id="p1die6">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                            <g filter="url(#filter0_d_38_2)">
+                            <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                            </g>
+                            <defs>
+                            <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dx="2" dy="1"/>
+                            <feGaussianBlur stdDeviation="1.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                            </filter>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="playerButtons">
+                <button class="regButton" id="clear1">Clear</button>
+                <button class="regButton" id="lockIn1" disabled>Lock In</button>
+            </div>
+
+            </div>
+        </div>
+
+        <div id="middleSide">
+            <h4 id="winner" class="yellowText">Player 1</h4>
+            <p id="gameWinText">Wins</p>
+            <p id="scoreDisplay" class="scoreText"></p>
+        </div>
+
+
+        <div id="rightSide" class="bodyContainer">
+            <div id="player2Header">
+                <h5 class="purpleText">Player 2</h5>
+                <p id="p2Wait" class="waitText">Waiting for Player 1...</p>
+            </div>
+            
+            
+            <div class="rowsAndLock">
+                <div class="bothRows">
+                    <div class="row">
+                        <div class="die1" id="p2die1">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                                <g filter="url(#filter0_d_38_2)">
+                                <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                                </g>
+                                <defs>
+                                <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dx="2" dy="1"/>
+                                <feGaussianBlur stdDeviation="1.5"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                                </filter>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <div class="operatorSelect2" id="p2Select1">
+                            <p class="whiteText">●</p>
+                        </div>
+
+                        <div class="die1" id="p2die2">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                                <g filter="url(#filter0_d_38_2)">
+                                <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                                </g>
+                                <defs>
+                                <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dx="2" dy="1"/>
+                                <feGaussianBlur stdDeviation="1.5"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                                </filter>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <div class="operatorSelect2" id="p2Select2">
+                            <p class="whiteText">●</p>
+                        </div>
+
+                        <div class="die1" id="p2die3">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                                <g filter="url(#filter0_d_38_2)">
+                                <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                                </g>
+                                <defs>
+                                <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dx="2" dy="1"/>
+                                <feGaussianBlur stdDeviation="1.5"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                                </filter>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <div class="operatorSelect2" id="p2Select3">
+                            <p class="whiteText">●</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="die1" id="p2die4">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                                <g filter="url(#filter0_d_38_2)">
+                                <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                                </g>
+                                <defs>
+                                <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dx="2" dy="1"/>
+                                <feGaussianBlur stdDeviation="1.5"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                                </filter>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <div class="operatorSelect2" id="p2Select4">
+                            <p class="whiteText">●</p>
+                        </div>
+
+                        <div class="die1" id="p2die5">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                                <g filter="url(#filter0_d_38_2)">
+                                <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                                </g>
+                                <defs>
+                                <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dx="2" dy="1"/>
+                                <feGaussianBlur stdDeviation="1.5"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                                </filter>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <div class="operatorSelect2" id="p2Select5">
+                            <p class="whiteText">●</p>
+                        </div>
+
+                        <div class="die1" id="p2die6">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="8" fill="#E8E8E8"/>
+                                <g filter="url(#filter0_d_38_2)">
+                                <rect x="20" y="20" width="8" height="8" rx="4" fill="#1C1C1C"/>
+                                </g>
+                                <defs>
+                                <filter id="filter0_d_38_2" x="19" y="18" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dx="2" dy="1"/>
+                                <feGaussianBlur stdDeviation="1.5"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0 0.298077 0 0 0 0.15 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_2"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_2" result="shape"/>
+                                </filter>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="playerButtons">
+                <button class="regButton" id="clear2">Clear</button>
+                <button class="regButton" id="lockIn2" disabled>Lock In</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+<!-- OPERATOR OVERLAYY-->
+<div id="operatorOverlay1">
+    <div class="overlayOptions">
+        <div class="overlayBtn" id="plusSign1">
+            <p class="whiteText2">+</p>
+        </div>
+
+        <div class="overlayBtn" id="minusSign1">
+            <p class="whiteText2">-</p>
+        </div>
+
+        <div class="overlayBtn" id="multiplySign1">
+            <p class="whiteText2">*</p>
+        </div>
+        <div class="overlayBtn" id="divideSign1">
+            <p class="whiteText2">/</p>
+        </div>
+
+        <div class="overlayBtn" id="powerSign1">
+            <p class="whiteText2">^</p>
+        </div>
+    </div>
+</div>
+
+<div id="operatorOverlay2">
+    <div class="overlayOptions2">
+        <div class="overlayBtn2" id="plusSign2">
+            <p class="whiteText2">+</p>
+        </div>
+
+        <div class="overlayBtn2" id="minusSign2">
+            <p class="whiteText2">-</p>
+        </div>
+
+        <div class="overlayBtn2" id="multiplySign2">
+            <p class="whiteText2">*</p>
+        </div>
+
+        <div class="overlayBtn2" id="divideSign2">
+            <p class="whiteText2">/</p>
+        </div>
+
+        <div class="overlayBtn2" id="powerSign2">
+            <p class="whiteText2">^</p>
+        </div>
+    </div>
+</div>
+</body>
+<footer>
+    <p><a href="sources.html">Sources</a></p>
+</footer>
+</html>
+
