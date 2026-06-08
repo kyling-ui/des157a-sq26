@@ -551,7 +551,7 @@
         </div>
 
         <div class="overlayBtn" id="powerSign1">
-            <p class="whiteText2">^</p>
+            <p class="whiteText2">**</p>
         </div>
     </div>
 </div>
@@ -575,13 +575,45 @@
         </div>
 
         <div class="overlayBtn2" id="powerSign2">
-            <p class="whiteText2">^</p>
+            <p class="whiteText2">**</p>
         </div>
     </div>
 </div>
     <footer>
+        <p id="gameInstructions"><a>Game Instructions</a></p>
         <p><a href="sources.html">Sources</a></p>
+        
     </footer>
+
+    <div id="instructionsOverlay">
+        <div id="howToPlay">
+            <h1>How to Play</h1>
+            <p>Objective: Build the biggest (or smallest) equation using the dice rolls.</p>
+        </div>
+
+        <div id="stepsToPlay">
+            <h1>Steps</h1>
+            <div id="steps">
+            <p>1. Press 'Start Game' to roll the dice. Six of the same numbers will be dealt to both players.</p>
+            <p>2. Player 1 goes first. Place an operator between each of your six numbers. You can use addition, subtraction, multiplication, division, or exponents.</p>
+            <p>3. Once Player 1 is happy with their equation, press 'Lock In' on Player 1's side. (Player 1 can unlock their equation, but once Player 2 locks in their equation, the round is over).</p>
+            <p>4. After Player 1 has locked in, Player 2 can place their own operators. Player 2 should press 'Lock In' on their side when readdy.</p>
+            <p>5. Once both players are locked in, both equations are calculated automatically. TThe player with the bigger (or smaller) result wins the round, depending on the game setting.</p>
+            <p>6. Each win adds to the player's win count. If both equations are tied, neither player is awarded points.</p>
+            </div>
+
+            <p>Operators: '+' = Add, '-' = Subtract, 
+                *' = Multiply, '/' = Divide, '**' = Power / Exponential</p>
+        </div>
+
+        <svg id="closeOverlay" width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#1C274C" stroke-width="1.5"/>
+            <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <div id="overlayDarken">
+    </div>
 </body>
 
 </html>

@@ -5,6 +5,34 @@
     'use strict'
     console.log('reading js');
 
+    // OVERLAY
+    function overlayStuff() {
+        document.querySelector('#overlayDarken').style.display = 'block';
+        document.querySelector('#instructionsOverlay').style.display = 'flex';
+
+        document.querySelector('#closeOverlay').addEventListener('click', function(){
+        
+        document.querySelector('#overlayDarken').style.display = 'none';
+        document.querySelector('#instructionsOverlay').style.display = 'none';
+
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key == 'Escape') {
+
+            document.querySelector('#overlayDarken').style.display = 'none';
+            document.querySelector('#instructionsOverlay').style.display = 'none';
+        }
+    });
+
+    document.querySelector('#gameInstructions').addEventListener('click', function(){
+        document.querySelector('#overlayDarken').style.display = 'block';
+        document.querySelector('#instructionsOverlay').style.display = 'flex';
+    });
+    }
+    overlayStuff();
+
+
 
     // SOUND
     const diceSound = new Audio('sound/dice.wav')
@@ -563,14 +591,15 @@
                 playerSelect[i].innerHTML = '<p class="whiteText">●</p>'
                 playerSelect[i].classList.remove('overlayBtn')
             }
+        }
 
         // reset overlay
         for (let j = 0; j<overlayOptions.length;j++) {
                 if (overlayOptions[j].classList.contains('overlayHide')) {
                     overlayOptions[j].classList.remove('overlayHide');
                 }
-            }
-        }   
+        }
+
         
         p1Operators = ['', '', '', '', ''];
         pastOperator = [null, null, null, null, null];
@@ -589,14 +618,15 @@
                 playerSelect[i].innerHTML = '<p class="whiteText">●</p>'
                 playerSelect[i].classList.remove('overlayBtn2')
             }
+        }
 
         // reset overlay
         for (let j = 0; j<overlayOptions.length;j++) {
                 if (overlayOptions[j].classList.contains('overlayHide')) {
                     overlayOptions[j].classList.remove('overlayHide');
                 }
-            }
-        }   
+        }
+
         
         p2Operators = ['', '', '', '', ''];
         pastOperator2 = [null, null, null, null, null];
@@ -960,7 +990,7 @@
         document.querySelector('#p2Wait').style.display = 'block';
 
         // reset the wins
-        document.querySelector('#winText').innerHTML = 'Wins!';
+        document.querySelector('#gameWinText').innerHTML = 'Wins!';
         document.querySelector('#scoreDisplay').innerHTML = '';
     }
 
