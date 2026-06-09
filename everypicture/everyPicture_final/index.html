@@ -24,15 +24,22 @@
 
     <!-- menu  -->
     <div id="albumSelection">
-        <p class="albumButton">reze arc.</p>
-        <!-- <p class="albumButton">your name.</p> -->
+        <p id="rezeButton" class="albumButton">reze arc.</p>
+        <p id="nameButton" class="albumButton">your name.</p>
+         <!-- next to albums -->
+        <p class="instruction" id="albumInstruction">← Change photo albums</p>
     </div>
+
+    <header id="header">
+        <h1 id="title">Memories</h1>
+        <p id="titleText">Stories of photos from Japan that are related to two movies: <a href="https://www.imdb.com/title/tt5311514/">'Your Name'</a> and <a href="https://www.imdb.com/title/tt30472557/">'Chainsaw Man – The Movie: Reze Arc'</a></p>
+    </header>
 
     <!--  -->
     <main id="cardContainer">
         
 
-        <div class="wholeCard">
+        <div class="wholeCard" id="rezeArc">
             <div class="cardInner currentCard">
                 <div class="frontSide">
                     <img src="images/rezeArc/card1.jpg" alt="card1">
@@ -43,16 +50,19 @@
                         <h1 class="photoNumber">1</h1>
                     </div>
                     
-                    <p class="captionText">Caption</p>
+                    <p class="captionText">First stop at the station, one of the only stops that opened to the outside</p>
                 </div>
             </div>
-        </div>
 
+            <p class="instruction" id="photoInstruction">← Click to learn more</p>
+        </div>
         
     </main>
 
     <!-- arrows -->
     <div id="arrowsTgt">
+        <p class="instruction" id="arrowInstruction">← Cycle through photos</p>
+
         <svg id="leftArrow" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="10" stroke="#b0b0b0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="#b0b0b0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -63,5 +73,7 @@
             <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="#b0b0b0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     </div>
+
+   
 </body>
 </html>

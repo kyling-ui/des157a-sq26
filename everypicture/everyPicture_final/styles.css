@@ -8,6 +8,8 @@ body, html {
     width: 100vw;
     height: 100vh;
     background-color: rgb(250, 253, 255);
+
+    overflow: hidden;
 }
 
 /* MENU SELECTION */
@@ -18,12 +20,16 @@ body, html {
     left: 20px;
 
     z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 
 #albumSelection .albumButton {
     font-family: 'Quicksand';
-    font-size: 14px;
+    font-size: 16px;
     color: #b0b0b0;
 
     transition: all 0.62s ease-out;
@@ -31,6 +37,11 @@ body, html {
 
 #albumSelection .albumButton:hover {
     color: rgb(29, 29, 29);
+}
+
+.albumButton {
+    cursor: pointer;
+    margin: 0;
 }
 
 /* CARD */
@@ -74,6 +85,13 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+}
+
+.backSide p {
+    max-width: 34ch;
+    line-height: 1.8em;
+    text-align: center;
 }
 
 .backSide .circle {
@@ -88,11 +106,14 @@ body, html {
 
     position: absolute;
     top: 36px;
+
+    display: none;
 }
 
-.backSide h1 {
+.backSide .circle h1 {
     font-family: 'Shadows Into Light';
-    font-size: 32px;
+    font-size: 24px;
+    margin: 0;
 }
 
 .backSide p {
@@ -106,6 +127,8 @@ body, html {
 .wholeCard {
     width: fit-content;
     height: fit-content;
+
+    display: block;
 
     position: absolute;
     perspective: 1000px;
@@ -129,6 +152,9 @@ body, html {
     transform: rotate(-1deg) rotateY(180deg) scale(1.025);
 }
 
+#yourName {
+    display: none;
+}
 
 /* LAYOUT */
 #cardContainer {
@@ -138,6 +164,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 40px;
 }
 
 /* ARROWS */
@@ -169,6 +196,39 @@ body, html {
     transform: translateX(-50%);
     bottom: 32px;
 }
+
+.instruction {
+    white-space: nowrap;
+    width: fit-content;
+    font-family: 'Shadows Into Light';
+    font-size: 18px;
+    color: #2f22e6;
+
+    position: absolute;
+
+    transition: opacity 0.4s ease-out;
+
+    cursor: default;
+}
+
+#albumInstruction {
+    left: calc(100% + 12px);
+    top: calc(50% - 12px);
+    transform: translateY(-50%) rotate(-2.4deg);
+}
+
+#photoInstruction {
+    left: calc(100% + 32px);
+    top: 50%;
+    transform: translateY(-50%) rotate(-1.8deg);
+}
+
+#arrowInstruction {
+    left: calc(100% + 12px);
+    top: calc(50% - 28px);
+    transform: translateY(-50%) rotate(-2.8deg);
+}
+
 
 /* MOVEMENT */
 
@@ -212,4 +272,58 @@ body, html {
     transform: translateX(0) translateY(0) rotate(0);
     opacity: 1;
     transition: transform 0.64s cubic-bezier(.26,.01,.08,.83), opacity 0.6s ease-out;
+}
+
+/* HEADER */
+header {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 98;
+
+    cursor: default;
+}
+
+header h1 {
+    font-family: 'Shadows Into Light';
+    font-size: 48px;
+    margin: 0;
+    color: #2f22e6
+}
+
+header p {
+    max-width: 48ch;
+    line-height: 1.4em;
+    text-align: center;
+    font-family: 'Quicksand';
+    font-size: 16px;
+    color: #b9b9b9;
+    margin: 0;
+    transition: all 0.32s ease-out;
+
+    line-height: 1.6em;
+}
+
+
+
+header a {
+    display: inline-block;
+    color: #939393;
+    text-decoration: none;
+    transition: all 0.32s ease-out;
+}
+
+header a:hover {
+    color: #2f22e6;
 }
